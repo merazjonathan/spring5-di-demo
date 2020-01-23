@@ -1,0 +1,41 @@
+# this is a comment
+
+name: Fred
+
+names:  # anything after the pound sign is ignored
+  - John
+  - Paul
+  - George
+  - Ringo
+
+pound_sign: "#"  # the first pound is in a string, so it's not a comment
+
+book:
+  author: Joe Buck
+  publisher: Random House
+
+truth: yes
+
+another_truth: True
+
+yet_another_truth: true
+
+false: no # or No, false, FALSE
+
+string_value_with_apostrophe: "It's got an apostrophe."
+
+colon_string: "My name: Jonathan"
+
+include_new_lines: |
+  Four score and seven years ago
+  our fathers brought forth
+  on this continent
+
+ignore_new_lines: >
+  Even though there
+  are new lines here,
+  they will be ignored
+  and all of this will
+  be concatenated with
+  spaces to form one
+  long string.
