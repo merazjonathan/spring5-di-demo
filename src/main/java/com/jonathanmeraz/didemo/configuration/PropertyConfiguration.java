@@ -12,15 +12,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 @Configuration
-//@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"}) // old way
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
 public class PropertyConfiguration {
-
-    @Autowired
-    Environment env;
 
     @Value("${com.jonathanmeraz.datasource.user}")
     String user;
@@ -52,15 +44,10 @@ public class PropertyConfiguration {
     @Bean
     public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(env.getProperty("USER"));
+        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
     }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        // this reads the file designated by @PropertySource, enabling the @Value annotations
-        return new PropertySourcesPlaceholderConfigurer();
-    }
 }
