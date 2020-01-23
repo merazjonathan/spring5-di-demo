@@ -1,8 +1,8 @@
-package guru.springframework.configuration;
+package com.jonathanmeraz.didemo.configuration;
 
-import guru.springframework.services.GreetingRepository;
-import guru.springframework.services.GreetingService;
-import guru.springframework.services.GreetingServiceFactory;
+import com.jonathanmeraz.didemo.services.GreetingRepository;
+import com.jonathanmeraz.didemo.services.GreetingService;
+import com.jonathanmeraz.didemo.services.GreetingServiceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;

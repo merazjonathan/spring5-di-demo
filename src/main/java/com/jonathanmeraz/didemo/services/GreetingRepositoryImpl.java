@@ -1,4 +1,4 @@
-package guru.springframework.services;
+package com.jonathanmeraz.didemo.services;
 
 import org.springframework.stereotype.Component;
 

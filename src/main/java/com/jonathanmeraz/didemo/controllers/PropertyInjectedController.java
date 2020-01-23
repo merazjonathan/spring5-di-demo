@@ -1,6 +1,6 @@
-package guru.springframework.controllers;
+package com.jonathanmeraz.didemo.controllers;
 
-import guru.springframework.services.GreetingService;
+import com.jonathanmeraz.didemo.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
