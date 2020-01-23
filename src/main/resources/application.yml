@@ -1,0 +1,8 @@
+# jms settings
+
+com:
+  jonathanmeraz:
+    jms:
+      user: gerald
+      password: tickle
+      url: http://yml.jms.example.com
