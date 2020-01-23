@@ -1,6 +1,7 @@
 package com.jonathanmeraz.didemo.configuration;
 
 import com.jonathanmeraz.didemo.examplebeans.FakeDataSource;
+import com.jonathanmeraz.didemo.examplebeans.FakeJmsBroker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +11,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("classpath:datasource.properties")
+@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
 public class PropertyConfiguration {
 
     @Autowired
@@ -24,6 +25,24 @@ public class PropertyConfiguration {
 
     @Value("${com.jonathanmeraz.datasource.url}")
     String url;
+
+    @Value("${com.jonathanmeraz.jms.user}")
+    String jmsUser;
+
+    @Value("${com.jonathanmeraz.jms.password}")
+    String jmsPassword;
+
+    @Value("${com.jonathanmeraz.jms.url}")
+    String jmsUrl;
+
+    @Bean
+    public FakeJmsBroker fakeJmsBroker() {
+        FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
+        fakeJmsBroker.setUser(jmsUser);
+        fakeJmsBroker.setPassword(jmsPassword);
+        fakeJmsBroker.setUrl(jmsUrl);
+        return fakeJmsBroker;
+    }
 
     @Bean
     public FakeDataSource fakeDataSource() {
