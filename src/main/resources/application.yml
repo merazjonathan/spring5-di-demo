@@ -6,3 +6,16 @@ com:
       user: gerald
       password: tickle
       url: http://yml.jms.example.com
+
+
+--- # this indicates a file separator, essentially a new file
+
+spring:
+  profiles: de
+
+com:
+  jonathanmeraz:
+    jms:
+      user: elise
+      password: ein
+      url: http://de.yml.jms.example.com
